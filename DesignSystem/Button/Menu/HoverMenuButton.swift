@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct CardMenuButton<Content: View>: View {
+struct HoverMenuButton<Content: View>: View {
     @State var isHover = false
     private var content: Content
     
     init(@ViewBuilder content: () -> Content) {
         self.content = content()
     }
-    
+                             
     var body: some View {
         Menu {
             content
@@ -50,7 +50,7 @@ struct CardMenuButton<Content: View>: View {
 }
 
 #Preview {
-    CardMenuButton{
+    HoverMenuButton{
         Button {
             print("Action 1")
         } label: {

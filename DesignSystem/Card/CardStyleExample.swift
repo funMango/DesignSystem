@@ -24,11 +24,11 @@ struct CardStyleExample: View {
                 }
                                                             
                 if isCardHover {
-                    CardMenuButton {
+                    HoverMenuButton {
                         
                     }
                 } else {
-                    CardMenuButton {
+                    HoverMenuButton {
                        
                     }
                     .opacity(0) // isCardHover가 false일 때 투명하게 만듭니다.
