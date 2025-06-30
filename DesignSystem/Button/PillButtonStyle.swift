@@ -33,7 +33,7 @@ private struct PillBackgroundModifier: ViewModifier {
         content // 이 부분이 HStack의 내용을 의미합니다.
             .frame(width: 80, height: 30)
             .background {
-                if isSelected {                    
+                if isSelected {
                     Color.white
                 }
                 else {
@@ -45,7 +45,7 @@ private struct PillBackgroundModifier: ViewModifier {
                 }
             }
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 0)
+            .shadow(color: .black.opacity(0.15), radius: 3, x: 0, y: 2)
             .overlay(
                 RoundedRectangle(cornerRadius: 30)
                     .stroke(Color.white.opacity(0.2), lineWidth: 0.3)
