@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PillButtonStyle: View {
     @State var isSelected: Bool = false
-    var color = Color.folderButton
+    var color = Color.block
     
     var body: some View {
         Button {
