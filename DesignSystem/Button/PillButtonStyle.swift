@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PillButtonStyle: View {
     @State var isSelected: Bool = false
-    var color = Color.white
+    var color = Color.folderButton
     
     var body: some View {
         Button {
@@ -17,6 +17,7 @@ struct PillButtonStyle: View {
         } label: {
             HStack {
                 Text("button")
+                    .foregroundStyle(isSelected ? .black : .primary)
             }
         }
         .buttonStyle(.plain)
@@ -26,30 +27,29 @@ struct PillButtonStyle: View {
 
 private struct PillBackgroundModifier: ViewModifier {
     @Binding var isSelected: Bool
-    @State var isHovering: Bool = false
     var color: Color
 
     func body(content: Content) -> some View {
         content // 이 부분이 HStack의 내용을 의미합니다.
             .frame(width: 80, height: 30)
             .background {
-                if isSelected {
-                    color
-                } else if isHovering {
+                if isSelected {                    
+                    Color.white
+                }
+                else {
                     Color.clear
                         .background(.ultraThinMaterial)
                         .overlay(
-                            color.opacity(0.4)
+                            color.opacity(0.1)
                         )
-                } else {
-                    Color.clear
                 }
             }
-            .onHover { isHovering in
-                self.isHovering = isHovering
-            }
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            
+            .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 0)
+            .overlay(
+                RoundedRectangle(cornerRadius: 30)
+                    .stroke(Color.white.opacity(0.2), lineWidth: 0.3)
+            )
     }
 }
 
