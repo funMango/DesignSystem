@@ -28,7 +28,7 @@ struct CardBackground<Content: View>: View {
                 )
         }
         .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-        .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 0)
+        .shadow(color: .black.opacity(0.15), radius: 3, x: 0, y: 2)
         .overlay(
             RoundedRectangle(cornerRadius: 30)
                 .stroke(Color.white.opacity(0.2), lineWidth: 0.3)
